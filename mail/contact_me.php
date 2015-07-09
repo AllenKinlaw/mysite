@@ -1,19 +1,20 @@
 <?php
+require 'PHPMailerAutoload.php';
 // Check for empty fields
-// if(empty($_POST['name'])  		||
-//    empty($_POST['email']) 		||
-//    empty($_POST['phone']) 		||
-//    empty($_POST['message'])	||
-//    !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
-//    {
-// 	echo "No arguments Provided!";
-// 	return false;
-//    }
+if(empty($_POST['name'])  		||
+   empty($_POST['email']) 		||
+   empty($_POST['phone']) 		||
+   empty($_POST['message'])	||
+   !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
+   {
+	echo "No arguments Provided!";
+	return false;
+   }
 	
-// $name = $_POST['name'];
-// $email_address = $_POST['email'];
-// $phone = $_POST['phone'];
-// $message = $_POST['message'];
+$name = $_POST['name'];
+$email_address = $_POST['email'];
+$phone = $_POST['phone'];
+$message = $_POST['message'];
 	
 // // Create the email and send the message
 // $to = 'allen@allenkinlaw.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
@@ -24,7 +25,7 @@
 // mail($to,$email_subject,$email_body,$headers);
 // return true;	
 
-require 'PHPMailerAutoload.php';
+
 
 $mail = new PHPMailer;
 
